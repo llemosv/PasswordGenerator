@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Modelo</title>
+</head>
+
+<body>
+
+  <section class="container">
+    <h1>Gerador de senhas</h1>
+
+    <div class="senha-gerada">Informe as opções desejadas</div>
+
+    <div class="container-opcoes">
+      <a>Quantidade de caracteres: </a>
+      <!-- solução para limitar o input, irei corrigir posteriormente -->
+      <input 
+        type="number" 
+        min="1" 
+        max="30" 
+        class="ipt-qtde" 
+        oninput="if(this.value > 30){
+          this.value = '30';
+        }else if(this.value < 0){
+          this.value = '0';
+        }"
+      >
+      <br>
+
+      <a>Adicionar maiúsculas: </a>
+      <input type="checkbox" class="chk-maiusculas"><br>
+
+      <a>Adicionar minúsculas: </a>
+      <input type="checkbox" class="chk-minusculas"><br>
+
+      <a>Adicionar números: </a>
+      <input type="checkbox" class="chk-numeros"><br>
+
+      <a>Adicionar símbolos: </a>
+      <input type="checkbox" class="chk-simbolos"><br>
+
+      <button type="button" class="gerar-senha">GERAR SENHA</button>
+    </div>
+  </section>
+
+  <script src="./assets/js/bundle.js"></script>
+</body>
+
+</html>
